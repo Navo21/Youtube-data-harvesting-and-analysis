@@ -32,7 +32,8 @@ Before you begin, ensure you have met the following requirements:
 ## Installation
 
 1. Clone the repository:
-git clone https://github.com/Navo21/YouTube-Data-Analysis.git
+git clone https://github.com/Navo21/Youtube-data-harvesting-and-analysis
+.git
 cd YouTube-Data-Analysis
 
 2. Install the required Python packages:
