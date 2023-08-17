@@ -1,0 +1,58 @@
+Step-by-Step Guide: Using the YouTube Data Analysis and Migration Tool
+This guide will walk you through the process of using the YouTube Data Analysis and Migration Tool to collect YouTube data, store it in a MySQL database, and perform data analysis.
+
+Step 1: Prerequisites
+	Before you begin, ensure you have the following prerequisites:
+
+	Python 3.x installed on your system.
+	Access to a MySQL server along with the necessary credentials.
+	YouTube Data API credentials (API Key or OAuth Client ID).
+
+Step 2: Installation
+	Clone the GitHub repository:
+
+	git clone https://github.com/your-username/YouTube-Data-Analysis.git
+	cd YouTube-Data-Analysis
+
+	Install required Python packages:
+
+	pip install -r requirements.txt
+
+Step 3: Configuration
+	Create a MySQL database:
+
+	1.If you don't have a MySQL server, set one up.
+	2.Create a new database (e.g., youtube_db) to store the collected data.
+	3.Open the app.py file and update the database connection details.
+
+	Obtain YouTube Data API credentials:
+
+	Go to the Google Cloud Console (https://console.developers.google.com/).
+	Create a new project and enable the YouTube Data API.
+	Create credentials (API Key or OAuth Client ID) and update them in the app.py file.
+
+Step 4: Using the App
+	Run the app by executing the following command in your terminal:
+	streamlit run app.py
+	Your default web browser will open, displaying the Streamlit web app.
+
+	The app is divided into sections: "Collect Data," "Migrate Data to MySQL," and "Perform Analysis."
+
+	Collecting Data
+	Click on the "Collect Data" section in the app.
+	Specify your search parameters, such as keywords, date range, and data type (channel, playlist, video, or 	comment).
+	Click the "Collect Data" button to initiate data collection using the YouTube Data API.
+	Migrating Data to MySQL
+	Navigate to the "Migrate Data" section in the app.
+	Click on the "Migrate Data to MySQL" button.
+	The app will establish a connection to your MySQL database and migrate the collected data.
+	Performing Analysis
+	Go to the "Perform Analysis" section in the app.
+	Choose from a list of analysis questions related to channel, video, and comment data.
+	Click on a question to view the analysis results, displayed as tables and interactive bar plots.
+
+Step 5: Viewing Results
+	The analysis results and visualizations will be displayed within the Streamlit app. You can 			interact with the plots and tables to gain insights into various aspects of the YouTube data.
+
+Step 6: Contributing and License
+	If you want to contribute to the project, feel free to submit pull requests on GitHub. The project 		is licensed under the MIT License. You can find the full license details in the LICENSE file.
