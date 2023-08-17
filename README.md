@@ -62,7 +62,7 @@ streamlit run app.py
 
 ## Screenshots
 
-Include screenshots of the Streamlit app in action here, showcasing different features and analysis results.
+Yet to add
 
 ## Contributing
 
