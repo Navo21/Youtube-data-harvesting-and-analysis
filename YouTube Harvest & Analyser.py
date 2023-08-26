@@ -27,30 +27,21 @@ import plotly.express as px
 
 # ==============================================         /   /   STREAMLIT DASHBOARD   /   /         ================================================== #
 
-# Comfiguring Streamlit GUI
-# st.set_page_config(
-#     page_title="YT",
-#     page_icon=":smiley:",
-#     layout="wide",
-#     initial_sidebar_state="auto",
-#     background_color="#f0f0f0",  # Change this color to your preferred color
-# )
 st.set_page_config (layout='wide')
 
 # Title
-st.title (':red[Here is your Youtube Data Harvesting & Analysis Tool]')
+st.title (':white[Here is your Youtube Data Harvesting & Analysis Tool]')
 
 # ========================================   /   /  Streamlit Data collection zone and Stored data to MongoDB  /   /   =================================== #
 
 # Data collection zone
 col1, col2 = st.columns (2)
 with col1:
-    st.header (':violet[Data collection zone]')
+    st.header (':white[Data collection zone]')
     st.write (
         '''Begin your analysis by providing the YouTube channel ID''')
     channel_id = st.text_input ('**Fill 11 digit id**')
     Get_data = st.button ('**Go**')
-    st.write ('''Get data and stored it in the MongoDB database to click below **:blue['Get data and stored']**.''')
 
 
     # Define Session state to Get data button
@@ -305,9 +296,9 @@ with col1:
 
 # ========================================   /     Data Migrate zone (Stored data to MySQL)    /   ========================================== #
 
-with col2:
-    st.header (':violet[Data Migrate zone]')
-    st.write ('''Choose the channel and forward its data for analysis..)''')
+# with col2:
+    st.header (':white[Data Migrate zone]')
+    st.write ('''Choose the channel and forward its data for analysis..''')
 
     # Connect to the MongoDB server
     client = pymongo.MongoClient ("mongodb://localhost:27017/")
@@ -324,7 +315,6 @@ with col2:
         document_names.append (document["Channel_Name"])
     document_name = st.selectbox ('**Select Channel name**', options=document_names, key='document_names')
     Migrate = st.button ('**Send data to Analysis**')
-    st.write ('''Migrate to MySQL database from MongoDB database to click below **:blue['Migrate to MySQL']**.''')
 
 
     # Define Session state to Migrate to MySQL button
@@ -410,7 +400,7 @@ with col2:
                     Comment_details_list.append (Comment_details_tosql)
         Comments_df = pd.DataFrame (Comment_details_list)
 
-        # -------------------- Data Migrate to MySQL --------------- #
+        # ------------------------------------------------------------------- Data Migrate to MySQL --------------------------------------------------- #
 
         # Connect to the MySQL server
         connect = mysql.connector.connect (
@@ -525,9 +515,9 @@ with col2:
 
 # ====================================================   /     Channel Analysis zone     /   ================================================= #
 
-st.header (':violet[Channel Data Analysis zone]')
+st.header (':white[Channel Data Analysis zone]')
 st.write (
-    '''(Note:- This zone **Analysis of a collection of channel data** depends on your question selection and gives a table format output.)''')
+    '''(The analysis of a collection of channel data is determined by the questions you select, and the results will be presented in a table format)''')
 
 # Check available channel data
 Check_channel = st.checkbox ('**Check available channel data for analysis**')
@@ -562,7 +552,7 @@ if Check_channel:
     st.dataframe (df_at_sql)
 
 # -----------------------------------------------------     /   Questions   /    ------------------------------------------------------------- #
-st.subheader (':violet[Channels Analysis ]')
+st.subheader (':white[Channels Analysis ]')
 
 # Selectbox creation
 question_tosql = st.selectbox ('**Select your Question**',
